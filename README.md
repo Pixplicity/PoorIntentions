@@ -16,6 +16,9 @@ This issue can best be reproduced by launching an app from its Google Play detai
 
 When the resolution is enabled, this app will pop up a toast displaying "Task resuming" when the issue is detected. The resolution is simply to finish the excess instance of MainActivity when taskInfo is started by a launch intent but is not the task's root activity.
 
+This YouTube video illustrates the problem on Android P:  
+[![Android issue #36907463](http://img.youtube.com/vi/3XvBzBcfLsU/0.jpg)](http://www.youtube.com/watch?v=3XvBzBcfLsU "Android issue #36907463")
+
 ## The resolution
 
 In your launch activity, simply perform the following check:
