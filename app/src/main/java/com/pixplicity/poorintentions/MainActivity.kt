@@ -51,14 +51,39 @@ class MainActivity : AppCompatActivity() {
         tv_task_stack.text = getString(R.string.task_stack, taskCount, resources.getQuantityString(R.plurals.activity, taskCount))
         if (taskCount > 1) tv_task_stack.setTextColor(getColor(R.color.colorPrimaryDark))
 
+        bt_continue.setOnClickListener {
+            startActivity(Intent(this, DetailActivity::class.java))
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        // This additional check is only needed because this app offers the option to disable the resolution with a switch
+
+        var enableResolution = Prefs.getBoolean(KEY_ENABLE_RESOLUTION, false)
+        fun checkAndResolve(enableResolution: Boolean): Boolean {
+            if (enableResolution) {
+                // Check that the activity was launched correctly
+                if (!isTaskRoot
+                        && intent.hasCategory(Intent.CATEGORY_LAUNCHER)
+                        && intent.action == Intent.ACTION_MAIN) {
+                    // This activity doesn't belong; just the launcher or whatever misbehaving
+                    showErrorToast()
+                    finish()
+                    return true
+                }
+            }
+            return false
+        }
+        if (checkAndResolve(enableResolution)) return
+
+        sw_resolution.setOnCheckedChangeListener(null)
         sw_resolution.isChecked = enableResolution
         sw_resolution.setOnCheckedChangeListener { _, isChecked ->
             enableResolution = isChecked
             Prefs.putBoolean(KEY_ENABLE_RESOLUTION, enableResolution)
-        }
-
-        bt_continue.setOnClickListener {
-            startActivity(Intent(this, DetailActivity::class.java))
+            checkAndResolve(enableResolution)
         }
     }
 
