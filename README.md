@@ -6,11 +6,11 @@ Illustrates invalid back stacks on Android and offers a resolution.
 
 This app consists of two screens: MainActivity and DetailActivity. The app can only exist in one of two states:
 
-[image]
+<img src="design/flow1.svg" height="120" title="Expected flow" />
 
 Unfortunately, due to a peculiarity in Android, launching an app that is already running might result in it entering an invalid state:
 
-[image]
+<img src="design/flow2.svg" height="120" title="Unexpected flow" />
 
 This issue can best be reproduced by launching an app from its Google Play details page, navigating to DetailActivity, pressing home, then launching it from the app drawer.
 
