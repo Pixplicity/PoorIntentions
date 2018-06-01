@@ -4,7 +4,9 @@ Illustrates invalid back stacks on Android and offers a resolution.
 
 ## The problem
 
-This app consists of two screens: MainActivity and DetailActivity. The app can only exist in one of two states:
+The problem addressed here is in relation to Android issue #[36907463](https://issuetracker.google.com/issues/36907463) and #[36941942](https://issuetracker.google.com/issues/36941942)
+
+This sample app consists of two screens: MainActivity and DetailActivity. The app can only exist in one of two states:
 
 <img src="design/flow1.svg" height="120" title="Expected flow" />
 
