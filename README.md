@@ -2,9 +2,11 @@
 
 Illustrates invalid back stacks on Android and offers a resolution.
 
+<a href="https://play.google.com/store/apps/details?id=com.pixplicity.poorintentions" title="Get it on Google Play"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="60" alt="Get it on Google Play" /></a>
+
 ## The problem
 
-The problem addressed here is in relation to Android issue #[36907463](https://issuetracker.google.com/issues/36907463) and #[36941942](https://issuetracker.google.com/issues/36941942)
+The problem addressed here is in relation to Android issue #[36907463](https://issuetracker.google.com/issues/36907463) and #[36941942](https://issuetracker.google.com/issues/36941942).
 
 This sample app consists of two screens: MainActivity and DetailActivity. The app can only exist in one of two states:
 
