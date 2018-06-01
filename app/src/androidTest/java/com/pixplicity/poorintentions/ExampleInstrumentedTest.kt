@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.pixplicity.steadyintent", appContext.packageName)
+        assertEquals("com.pixplicity.poorintentions", appContext.packageName)
     }
 }
