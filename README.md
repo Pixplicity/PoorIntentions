@@ -38,6 +38,8 @@ In your launch activity, simply perform the following check:
 
 ## About
 
+<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" height="100" />
+
 [Made with ❤ by Pixplicity](https://pixplicity.com)
 
 ## License
