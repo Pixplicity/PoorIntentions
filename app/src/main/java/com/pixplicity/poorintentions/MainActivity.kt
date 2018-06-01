@@ -4,6 +4,7 @@ import android.content.ContextWrapper
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.Toast
 import com.pixplicity.easyprefs.library.Prefs
 import kotlinx.android.synthetic.main.activity_main.*
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                     && intent.hasCategory(Intent.CATEGORY_LAUNCHER)
                     && intent.action == Intent.ACTION_MAIN) {
                 // This activity doesn't belong; just the launcher or whatever misbehaving
-                Toast.makeText(this, R.string.task_resuming, Toast.LENGTH_SHORT).show()
+                showErrorToast()
                 finish()
                 return
             }
@@ -51,6 +52,15 @@ class MainActivity : AppCompatActivity() {
 
         bt_continue.setOnClickListener {
             startActivity(Intent(this, DetailActivity::class.java))
+        }
+    }
+
+    private fun showErrorToast() {
+        Toast(this).apply {
+            view = layoutInflater.inflate(R.layout.toast, null)
+            duration = Toast.LENGTH_LONG
+            setGravity(Gravity.CENTER, 0, 0)
+            show()
         }
     }
 
