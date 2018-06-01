@@ -8,6 +8,9 @@ import android.view.Gravity
 import android.widget.Toast
 import com.pixplicity.easyprefs.library.Prefs
 import kotlinx.android.synthetic.main.activity_main.*
+import android.app.ActivityManager
+import android.graphics.Color
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,6 +47,10 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setIcon(R.drawable.ic_toolbar_icon)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
+        val taskCount = countTasks()
+        tv_task_stack.text = getString(R.string.task_stack, taskCount, resources.getQuantityString(R.plurals.activity, taskCount))
+        if (taskCount > 1) tv_task_stack.setTextColor(getColor(R.color.colorPrimaryDark))
+
         sw_resolution.isChecked = enableResolution
         sw_resolution.setOnCheckedChangeListener { _, isChecked ->
             enableResolution = isChecked
@@ -53,6 +60,15 @@ class MainActivity : AppCompatActivity() {
         bt_continue.setOnClickListener {
             startActivity(Intent(this, DetailActivity::class.java))
         }
+    }
+
+    private fun countTasks(): Int {
+        val activityManager = getSystemService(ContextWrapper.ACTIVITY_SERVICE) as ActivityManager
+        var numOfActivities = 0
+        activityManager.appTasks.forEach {
+            numOfActivities += it.taskInfo.numActivities
+        }
+        return numOfActivities
     }
 
     private fun showErrorToast() {

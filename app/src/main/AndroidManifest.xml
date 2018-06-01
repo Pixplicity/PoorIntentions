@@ -10,8 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.pixplicity.poorintentions.MainActivity"
-            android:launchMode="singleTop">
+            android:name="com.pixplicity.poorintentions.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

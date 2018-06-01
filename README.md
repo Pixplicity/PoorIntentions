@@ -8,13 +8,13 @@ This app consists of two screens: MainActivity and DetailActivity. The app can o
 
 <img src="design/flow1.svg" height="120" title="Expected flow" />
 
-Unfortunately, due to a peculiarity in Android, launching an app that is already running might result in it entering an invalid state:
+Unfortunately, due to a peculiarity in Android, launching an app that is already running might result in taskInfo entering an invalid state:
 
 <img src="design/flow2.svg" height="120" title="Unexpected flow" />
 
-This issue can best be reproduced by launching an app from its Google Play details page, navigating to DetailActivity, pressing home, then launching it from the app drawer.
+This issue can best be reproduced by launching an app from its Google Play details page, navigating to DetailActivity, pressing home, then launching taskInfo from the app drawer.
 
-When the resolution is enabled, this app will pop up a toast displaying "Task resuming" when the issue is detected. The resolution is simply to finish the excess instance of MainActivity when it is started by a launch intent but is not the task's root activity.
+When the resolution is enabled, this app will pop up a toast displaying "Task resuming" when the issue is detected. The resolution is simply to finish the excess instance of MainActivity when taskInfo is started by a launch intent but is not the task's root activity.
 
 ## The resolution
 

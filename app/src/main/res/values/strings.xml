@@ -2,14 +2,20 @@
     <string name="app_name">Poor Intentions</string>
 
     <string name="explanation_main_1">This app consists of two screens: MainActivity and DetailActivity. The app can only exist in one of two states:</string>
-    <string name="explanation_main_2">Unfortunately, due to a peculiarity in Android, launching an app that is already running might result in it entering an invalid state:</string>
-    <string name="explanation_main_3">This issue can best be reproduced by launching an app from its Google Play details page, navigating to DetailActivity, pressing home, then launching it from the app drawer.</string>
-    <string name="explanation_main_4">When the resolution is enabled, this app will pop up a toast displaying \"Task resuming\" when the issue is detected. The resolution is simply to finish the excess instance of MainActivity when it is started by a launch intent but is not the task\'s root activity.</string>
+    <string name="explanation_main_2">Unfortunately, due to a peculiarity in Android, launching an app that is already running might result in taskInfo entering an invalid state:</string>
+    <string name="explanation_main_3">This issue can best be reproduced by launching an app from its Google Play details page, navigating to DetailActivity, pressing home, then launching taskInfo from the app drawer.</string>
+    <string name="explanation_main_4">When the resolution is enabled, this app will pop up a toast displaying \"Task resuming\" when the issue is detected. The resolution is simply to finish the excess instance of MainActivity when taskInfo is started by a launch intent but is not the task\'s root activity.</string>
+    <string name="enable_resolution">Enable resolution</string>
     <string name="continue_details">Continue to detail screen</string>
 
     <string name="task_resuming">Task resuming</string>
 
     <string name="explanation_detail_1">DETAIL</string>
     <string name="explanation_detail_2">Now press the home button and launch the app in a different way. For instance, open the Google Play details page and hit \"Open\" from there. You should expect the app to open to this screen, right?</string>
+    <string name="task_stack">Task stack: %1$d %2$s</string>
+    <plurals name="activity">
+        <item quantity="one">activity</item>
+        <item quantity="other">activities</item>
+    </plurals>
 
 </resources>
